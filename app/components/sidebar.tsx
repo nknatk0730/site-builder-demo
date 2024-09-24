@@ -24,6 +24,7 @@ export const Sidebar = () => {
 
   return (
     <div className="space-y-6">
+      {data.title}
       <div className="border rounded-md p-2 bg-muted relative">
         <h1 className="mb-4 font-semibold">Hero</h1>
         <p>
