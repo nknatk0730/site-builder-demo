@@ -15,12 +15,13 @@ export const Section = ({
   const [data, setData] = useLocalStorageState<Data>('data', {
     defaultValue: {
       title: 'Create Next App',
-      section: [],
+      sections: [],
     }
   });
 
   const onDelete = () => {
     setData((prev) => ({
+      ...prev,
       sections: prev.sections.filter((section) => section.id !== id),
     }))
   }
@@ -30,7 +31,7 @@ export const Section = ({
       {children}
       <Button size="icon" className="absolute size-7 top-0 right-0" onClick={onDelete}>
         <Trash size={18} />
-        <span className="sr-only">delete section</span>
+        <span className="sr-only">{data.title}</span>
       </Button>
     </div>
   );
