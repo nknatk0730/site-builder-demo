@@ -29,7 +29,7 @@ export const Preview = () => {
 
           return (
             <Section key={section.id} id={section.id}>
-              <Component {...section.data} />
+              <Component id={section.id} {...section.data} />
             </Section>
           );
         })}

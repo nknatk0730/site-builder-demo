@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Data } from "@/types/data";
 import { Trash } from "lucide-react";
 import useLocalStorageState from "use-local-storage-state";
+import { SectionEditor } from "./section-editor";
 
 export const Section = ({
   children,
@@ -29,10 +30,17 @@ export const Section = ({
   return (
     <div className="relative hover:bg-sky-500/20">
       {children}
-      <Button size="icon" className="absolute size-7 top-0 right-0" onClick={onDelete}>
-        <Trash size={18} />
-        <span className="sr-only">{data.title}</span>
-      </Button>
+      <div className="absolute flex gap-2 top-0 right-0">
+        <Button
+          size="icon"
+          className="size-7"
+          onClick={onDelete}
+        >
+          <Trash size={18} />
+          <span className="sr-only">{data.title}</span>
+        </Button>
+        <SectionEditor id={id} />
+      </div>
     </div>
   );
 }
