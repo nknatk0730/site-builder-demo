@@ -32,6 +32,7 @@ export function SectionEditor({
 
   const form = useForm();
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmit = (data: any) => {
     setData((prev) => ({
       ...prev,
